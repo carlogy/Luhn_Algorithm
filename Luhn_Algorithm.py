@@ -15,8 +15,13 @@ def verify_card_number(card_number):
     for digit in even_digits:
         number = int(digit) * 2
         if number >= 10:
-            print(number) 
+            number  = number // 10 + number % 10    
+        sum_of_even_digits + number
     
+    total = sum_of_odd_digits + sum_of_even_digits
+    return total % 10 == 0
+
+   
 
 
 
@@ -28,6 +33,9 @@ def main():
 
     
 
-    verify_card_number(translated_card_number)
+    if verify_card_number(translated_card_number):
+        print('VALID!')
+    else:
+        print('INVALID!')
 
 main()
